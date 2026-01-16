@@ -1,0 +1,213 @@
+/* ============================= */
+/* Global Design Tokens */
+/* ============================= */
+
+:root {
+  --bg-main: #050712;
+
+  --bg-panel: rgba(255, 255, 255, 0.10);
+  --bg-panel-soft: rgba(255, 255, 255, 0.06);
+  --border-soft: rgba(255, 255, 255, 0.16);
+
+  --text-primary: #f4f6ff;
+  --text-secondary: #b3b9d4;
+
+  --green: #3aff7a;
+  --red: #ff6b6b;
+  --blue: #7b8cff;
+
+  --radius: 14px;
+  --radius-lg: 18px;
+}
+
+/* ============================= */
+/* Base */
+/* ============================= */
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
+  background: linear-gradient(
+    180deg,
+    #060817 0%,
+    #050712 50%,
+    #04050f 100%
+  );
+  color: var(--text-primary);
+}
+
+/* ============================= */
+/* Layout */
+/* ============================= */
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  padding: 28px 20px;
+  border-right: 1px solid var(--border-soft);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0)
+  );
+}
+
+.sidebar .logo {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 32px;
+}
+
+.sidebar nav a {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.sidebar nav .active {
+  color: var(--green);
+}
+
+/* ============================= */
+/* Dashboard */
+/* ============================= */
+
+.dashboard {
+  padding: 28px 32px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-header h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dashboard-header p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.live-badge {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(58,255,122,0.18);
+  color: var(--green);
+  box-shadow: 0 0 14px rgba(58,255,122,0.55);
+}
+
+/* ============================= */
+/* Metrics */
+/* ============================= */
+
+.metrics {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.metric-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.05)
+  );
+  border: 1px solid var(--border-soft);
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.metric-card p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+
+.metric-card h2 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.green { color: var(--green); }
+.red { color: var(--red); }
+
+/* ============================= */
+/* Charts */
+/* ============================= */
+
+.charts {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 18px;
+}
+
+.card {
+  background: var(--bg-panel-soft);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+}
+
+.card.large {
+  height: 340px;
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #dce1ff;
+  margin-bottom: 12px;
+}
+
+/* ============================= */
+/* Device Status Row */
+/* ============================= */
+
+.device-row {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+  border-radius: var(--radius);
+  border: 1px solid var(--border-soft);
+  font-size: 13px;
+}
+
+.device-row span {
+  color: var(--text-secondary);
+}
+
+.device-row .healthy {
+  color: var(--green);
+}
+
+/* ============================= */
+/* ECharts Wrapper */
+/* ============================= */
+
+.echarts-for-react {
+  border-radius: 12px;
+}
